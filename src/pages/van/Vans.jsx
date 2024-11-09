@@ -10,11 +10,12 @@ export default function Vans() {
    *    `searchParams` object) to a variable called `typeFilter`
    * 3. Log the value of the `typeFilter` to the console
    */
+
   const [vans, setVans] = React.useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const typeFilter = searchParams.get("type");
-  console.log(typeFilter);
+  // console.log(typeFilter);
 
   React.useEffect(() => {
     fetch("/api/vans")
@@ -22,7 +23,17 @@ export default function Vans() {
       .then((data) => setVans(data.vans));
   }, []);
 
-  const vanElements = vans.map((van) => (
+  /**
+   * Challenge: filter the list of vans based on the `typeFilter`
+   * we created earlier. For now, just enter "simple", "luxury",
+   * or "rugged" into the search param in the URL to check your work.
+   */
+
+  const displayedVans = typeFilter
+    ? vans.filter((van) => van.type === typeFilter)
+    : vans;
+
+  const vanElements = displayedVans.map((van) => (
     <div key={van.id} className="van-tile">
       <Link
         to={`/vans/${van.id}`}
