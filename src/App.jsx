@@ -13,6 +13,7 @@ import HostVanPricing from "./pages/Host/HostVanPricing";
 import HostVans from "./pages/Host/HostVans";
 import Income from "./pages/Host/Income";
 import Reviews from "./pages/Host/Reviews";
+import NotFound from "./pages/NotFound";
 import VanDetail from "./pages/van/VanDetail";
 import Vans from "./pages/van/Vans";
 
@@ -36,6 +37,7 @@ const App = () => {
             <Route path="photos" element={<HostVanPhotos />} />
           </Route>
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );
