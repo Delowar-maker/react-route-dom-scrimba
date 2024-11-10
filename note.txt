@@ -34,3 +34,22 @@ function ProductDetail() {
 1. What happens to state when you refresh the page?
 2.Can you share the current state of your app with a friend?
   Ans: You have 4 filters and a text search on the list of vans and you want to share the list view with a friend.
+
+
+ 1.When does the code in a loader function run ?
+   Ans: before the route change and the component for the route loads
+
+
+ 2.What are some benefits of using a data loader function instead of fetching our data in a useEffect in a component?
+  Ans: * Dont't need to worry about handling loading state in the component
+       * Don't need to have lengthy/confusing useEffect code in our component
+       * don't need to handle error state in the component
+
+ 3.What change do we need to make to our BrowserRouter before we can use loader (or any of the new data-layer API features) in our app?
+  Ans: get rid of the BrowserRouter component and use createBrowserRouter() instead. Can use CreateRoutesFormElement() instead. can use CreateRoutesFormElement() to make the transition a bit easier
+
+
+ 4. What are the steps we need to take in order to use a loader on any given router?
+   Ans: * Define and export a loader function
+        * Import the loader and pass it to the route we're wanting to fetch data for
+        * Use th useLoaderData() hook to get the data from the loader function

@@ -11,6 +11,8 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Host/Dashboard";
 
+import Error from "./components/Error";
+import Login from "./Login";
 import HostVanDetail from "./pages/Host/HostVanDetail";
 import HostVanInfo from "./pages/Host/HostVanInfo";
 import HostVanPhotos from "./pages/Host/HostVanPhotos";
@@ -27,7 +29,13 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
-      <Route path="vans" element={<Vans />} loader={vansLoader} />
+      <Route path="login" element={<Login />} />
+      <Route
+        path="vans"
+        element={<Vans />}
+        loader={vansLoader}
+        errorElement={<Error />}
+      />
       <Route path="vans/:id" element={<VanDetail />} />
 
       <Route path="host" element={<HostLayout />}>
