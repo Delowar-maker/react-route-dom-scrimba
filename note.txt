@@ -30,3 +30,7 @@ function ProductDetail() {
 
 4. What ii an "Index Route"  
   Ans: It's the "default route" we want to render when the path of the parent route matches. It given us a chance to render an element inside the parent's <Outlet/> at the same path as the parent route.
+
+1. What happens to state when you refresh the page?
+2.Can you share the current state of your app with a friend?
+  Ans: You have 4 filters and a text search on the list of vans and you want to share the list view with a friend.
