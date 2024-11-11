@@ -53,3 +53,14 @@ function ProductDetail() {
    Ans: * Define and export a loader function
         * Import the loader and pass it to the route we're wanting to fetch data for
         * Use th useLoaderData() hook to get the data from the loader function
+
+1.How did we chang oure route definition in order to "protect" certain routes from an un-logged-in user?
+
+  Ans: Wrapped the routes we Wanted to protect in a Layout route that contain logic to redirect someone if they're not logged in
+
+2.What component can we use to auttomatically send someone to a different route in our app?
+
+  Ans: <Navigate to="/login"/>
+
+3.What component can we render if the user Is Logged in?
+   Ans: <Outlet/>
